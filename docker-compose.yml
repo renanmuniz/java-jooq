@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:18-alpine
+    container_name: jooq-study-db
+    environment:
+      POSTGRES_DB: jooq_study
+      POSTGRES_USER: dev
+      POSTGRES_PASSWORD: dev123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql
+      - ./src/main/resources/create_table.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  postgres_data:
