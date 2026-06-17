@@ -5,6 +5,7 @@ package com.jooq.renanmuniz.java_jooq.public_;
 
 
 import com.jooq.renanmuniz.java_jooq.DefaultCatalog;
+import com.jooq.renanmuniz.java_jooq.public_.tables.AccessLog;
 import com.jooq.renanmuniz.java_jooq.public_.tables.Users;
 
 import java.util.Arrays;
@@ -29,6 +30,11 @@ public class Public extends SchemaImpl {
     public static final Public PUBLIC = new Public();
 
     /**
+     * The table <code>public.access_log</code>.
+     */
+    public final AccessLog ACCESS_LOG = AccessLog.ACCESS_LOG;
+
+    /**
      * The table <code>public.users</code>.
      */
     public final Users USERS = Users.USERS;
@@ -49,6 +55,7 @@ public class Public extends SchemaImpl {
     @Override
     public final List<Table<?>> getTables() {
         return Arrays.asList(
+            AccessLog.ACCESS_LOG,
             Users.USERS
         );
     }

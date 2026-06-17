@@ -4,6 +4,7 @@
 package com.jooq.renanmuniz.java_jooq.public_;
 
 
+import com.jooq.renanmuniz.java_jooq.public_.tables.AccessLog;
 import com.jooq.renanmuniz.java_jooq.public_.tables.Users;
 
 
@@ -12,6 +13,11 @@ import com.jooq.renanmuniz.java_jooq.public_.tables.Users;
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Tables {
+
+    /**
+     * The table <code>public.access_log</code>.
+     */
+    public static final AccessLog ACCESS_LOG = AccessLog.ACCESS_LOG;
 
     /**
      * The table <code>public.users</code>.

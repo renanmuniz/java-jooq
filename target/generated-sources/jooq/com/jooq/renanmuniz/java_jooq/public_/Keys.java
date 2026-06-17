@@ -4,9 +4,12 @@
 package com.jooq.renanmuniz.java_jooq.public_;
 
 
+import com.jooq.renanmuniz.java_jooq.public_.tables.AccessLog;
 import com.jooq.renanmuniz.java_jooq.public_.tables.Users;
+import com.jooq.renanmuniz.java_jooq.public_.tables.records.AccessLogRecord;
 import com.jooq.renanmuniz.java_jooq.public_.tables.records.UsersRecord;
 
+import org.jooq.ForeignKey;
 import org.jooq.TableField;
 import org.jooq.UniqueKey;
 import org.jooq.impl.DSL;
@@ -24,6 +27,13 @@ public class Keys {
     // UNIQUE and PRIMARY KEY definitions
     // -------------------------------------------------------------------------
 
+    public static final UniqueKey<AccessLogRecord> ACCESS_LOG_PKEY = Internal.createUniqueKey(AccessLog.ACCESS_LOG, DSL.name("access_log_pkey"), new TableField[] { AccessLog.ACCESS_LOG.ID }, true);
     public static final UniqueKey<UsersRecord> USERS_PKEY = Internal.createUniqueKey(Users.USERS, DSL.name("users_pkey"), new TableField[] { Users.USERS.ID }, true);
     public static final UniqueKey<UsersRecord> USERS_USERNAME_KEY = Internal.createUniqueKey(Users.USERS, DSL.name("users_username_key"), new TableField[] { Users.USERS.USERNAME }, true);
+
+    // -------------------------------------------------------------------------
+    // FOREIGN KEY definitions
+    // -------------------------------------------------------------------------
+
+    public static final ForeignKey<AccessLogRecord, UsersRecord> ACCESS_LOG__ACCESS_LOG_USER_ID_FKEY = Internal.createForeignKey(AccessLog.ACCESS_LOG, DSL.name("access_log_user_id_fkey"), new TableField[] { AccessLog.ACCESS_LOG.USER_ID }, Keys.USERS_PKEY, new TableField[] { Users.USERS.ID }, true);
 }

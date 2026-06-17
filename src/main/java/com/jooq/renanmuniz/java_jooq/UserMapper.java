@@ -6,6 +6,7 @@ public class UserMapper {
 
     public static UserDTO toUserDTO(UsersRecord user) {
         return new UserDTO(
+                user.getId(),
                 user.getUsername(),
                 user.getEmail()
         );

@@ -48,4 +48,10 @@ public class UserRepositoryImpl implements UserRepository {
 
         return deleted;
     }
+
+    //TODO [X] Create another table named `access_log`. It must store the username and logging timestamp
+    //TODO [ ] Create the repository for the access_log table
+    //TODO [ ] Create and endpoint that saves this logging information(id, logged_in_at).
+    //TODO [ ] Create and endpoint to retrieve this logging info. But, I want to practice a JOIN query. So return the username and the timestamp.
+
 }
